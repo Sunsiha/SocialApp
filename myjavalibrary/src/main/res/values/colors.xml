@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#808080</color>
+    <color name="colorLightGrey">#D3D3D3</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorPrimary">@color/blue_toolbar</color>
+    <color name="colorPrimaryDark">#363439</color>
+    <color name="colorAccent">#363439</color>
+
+    <color name="blue_toolbar">#1369b0</color>
+    <color name="blue">#2290ed</color>
+    <color name="blue_tv">#8ed8f8</color>
+    <color name="orange">#FFBF00</color>
+    <color name="transparent">#00000000</color>
+    <color name="red">#ff0000</color>
+    <color name="color1">#ff6666</color>
+
+
+
+    <color name="color2">#FF6633</color>
+    <color name="color3">#FFCCCC</color>
+    <color name="color4">#ebf28a</color>
+    <color name="color5">#aedbf1</color>
+    <color name="color6">#f6b4d5</color>
+    <color name="color7">#f75973</color>
+    <color name="color8">#FF9933</color>
+
+
+    <array name="rainbow">
+        <item>@color/color1</item>
+        <item>@color/color2</item>
+        <item>@color/color3</item>
+        <item>@color/color4</item>
+        <item>@color/color5</item>
+        <item>@color/color6</item>
+        <item>@color/color7</item>
+        <item>@color/color8</item>
+
+    </array>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".features.account.UsersActivity">
+        <Button
+            android:id="@+id/clickLibButton"
+            android:layout_width="match_parent"
+            android:text="Lib Click"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"></Button>
+        <Button
+            android:id="@+id/redirectingButton"
+            android:layout_width="match_parent"
+            android:text="Launch Library Activity"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@+id/clickLibButton"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"></Button>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/users_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/redirectingButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

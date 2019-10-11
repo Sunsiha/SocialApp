@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Assignment Moonlyte</string>
+    <string name="username">User Name</string>
+    <string name="posts">Posts</string>
+    <string name="albums">Albums</string>
+    <string name="to_dos">To-dos</string>
+</resources>
