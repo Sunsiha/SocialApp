@@ -1,2 +1,2 @@
-include ':app', ':myjavalibrary'
+include ':app', ':user', ':login'
 rootProject.name='SocialApp'

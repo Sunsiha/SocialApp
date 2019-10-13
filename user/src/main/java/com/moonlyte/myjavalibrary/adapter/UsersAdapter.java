@@ -102,7 +102,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
             } else if (intentDirection.equalsIgnoreCase("ToDos")) {
                 intent = new Intent(view.getContext(), ToDosActivity.class);
             }
-            intent.putExtra("UserId", usersModel.id);
+            intent.putExtra("userId", usersModel.id);
             view.getContext().startActivity(intent);
         }
     }

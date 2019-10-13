@@ -10,10 +10,14 @@ import com.moonlyte.socialapp.features.account.model.Users
 import com.moonlyte.socialapp.common.BindableAdapter
 import com.moonlyte.socialapp.databinding.ItemUsersListCardViewBinding
 
-internal class UsersAdapter(private val callback: ((user: Users) -> Unit)? = null) :
+internal class UsersAdapter(private val callback: ((user: Users, int: Int) -> Unit)? = null) :
     RecyclerView.Adapter<UsersAdapter.ViewHolder>(),
     BindableAdapter<Users> {
 
+    companion object {
+        const val POST = 1
+        const val TODO = 2
+    }
     private var userList: List<Users> = emptyList()
 
     override fun setDataList(userList: List<Users>?) {
@@ -49,8 +53,12 @@ internal class UsersAdapter(private val callback: ((user: Users) -> Unit)? = nul
         fun bind(users: Users) {
             this.viewDataBinding.setVariable(BR.users, users)
             this.viewDataBinding.postsLL.setOnClickListener {
-                this@UsersAdapter.callback?.invoke(users)
+                this@UsersAdapter.callback?.invoke(users, POST)
             }
+            this.viewDataBinding.todosLL.setOnClickListener {
+                this@UsersAdapter.callback?.invoke(users, TODO)
+            }
+
         }
     }
 }

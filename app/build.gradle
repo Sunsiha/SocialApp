@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
@@ -60,10 +61,11 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-    implementation project(path: ':myjavalibrary')
+    implementation project(path: ':user')
     // For Kotlin use kapt instead of annotationProcessor
 
     implementation "org.jetbrains.anko:anko-design:0.10.5"
+    implementation project(path: ':login')
 
 }
 repositories {

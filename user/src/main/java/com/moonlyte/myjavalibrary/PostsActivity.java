@@ -50,7 +50,7 @@ public class PostsActivity extends AppCompatActivity implements View.OnClickList
         backIV.setOnClickListener(this);
 
         expandableListView = findViewById(R.id.expandableListView);
-        Integer userId = getIntent().getIntExtra("UserId", 0);
+        Integer userId = getIntent().getIntExtra("userId", 0);
         getUserPosts(userId);
     }
 

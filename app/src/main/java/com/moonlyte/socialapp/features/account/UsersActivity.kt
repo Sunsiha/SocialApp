@@ -9,12 +9,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.moonlyte.myjavalibrary.ToDosActivity
 import com.moonlyte.myjavalibrary.UsersActivity
 import com.moonlyte.socialapp.R
-import com.moonlyte.socialapp.features.account.adapter.UsersAdapter
 import com.moonlyte.socialapp.databinding.ActivityUsersBinding
-import com.moonlyte.socialapp.persistence.DataSource
+import com.moonlyte.socialapp.features.account.adapter.UsersAdapter
+import com.moonlyte.socialapp.features.account.adapter.UsersAdapter.Companion.POST
+import com.moonlyte.socialapp.features.account.adapter.UsersAdapter.Companion.TODO
 import com.moonlyte.socialapp.features.post.PostActivity
+import com.moonlyte.socialapp.persistence.DataSource
 
 class UsersActivity : AppCompatActivity() {
 
@@ -32,10 +35,16 @@ class UsersActivity : AppCompatActivity() {
         activityUsersBinding.viewModel = this.usersViewModel
         activityUsersBinding.handler = this
 
-        val usersAdapter = UsersAdapter { user ->
-            val intent = Intent(this, PostActivity::class.java)
-            intent.putExtra("UserId", user.id)
-            this.startActivity(intent)
+        val usersAdapter = UsersAdapter { user, section ->
+            when(section) {
+                POST -> this.startActivity(Intent(this, PostActivity::class.java).apply {
+                    putExtra("userId", user.id)
+                })
+                TODO -> this.startActivity(Intent(this, ToDosActivity::class.java).apply {
+                    putExtra("userId", user.id)
+                })
+                else -> {}
+            }
         }
 
         activityUsersBinding.adapter = usersAdapter
@@ -67,5 +76,6 @@ class UsersActivity : AppCompatActivity() {
             return false
         }
     }
+
 }
 

@@ -24,6 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ToDosActivity extends AppCompatActivity implements View.OnClickListener {
+
     private RecyclerView todosRV;
     private API api;
     private ToDosAdapter toDosAdapter;
@@ -35,18 +36,18 @@ public class ToDosActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_dos);
-        Integer userId = getIntent().getIntExtra("UserId", 0);
+        Integer userId = getIntent().getIntExtra("userId", 0);
         this.api = ApiClient.getApiClient().create(API.class);
         initComponents();
         getUserTodos(userId);
     }
 
     private void initComponents() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        backIV = (ImageView) toolbar.findViewById(R.id.backIV);
-        TextView toolbarTitleTv = (TextView) findViewById(R.id.toolbarTitleTv);
+        backIV = toolbar.findViewById(R.id.backIV);
+        TextView toolbarTitleTv = findViewById(R.id.toolbarTitleTv);
         toolbarTitleTv.setText("To-dos");
         backIV.setOnClickListener(this);
 

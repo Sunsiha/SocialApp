@@ -31,7 +31,7 @@ class PostActivity : AppCompatActivity() {
         val postsAdapter = PostAdapter()
         activityPostBinding.postsAdapter = postsAdapter
 
-        val userId = intent.getIntExtra("UserId", 0)
+        val userId = intent.getIntExtra("userId", 0)
 
         this.dataSource = DataSource.getInstance(this)
 
